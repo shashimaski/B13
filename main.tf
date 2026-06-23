@@ -11,7 +11,7 @@ module "vnet" {
   resource_group_name = module.resource_group.name
   location            = module.resource_group.location
   vnet_name           = var.vnet_name
-  addres              = var.address
+  address              = var.address
 
   depends_on = [module.resource_group]
 }
