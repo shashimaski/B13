@@ -1,0 +1,4 @@
+App: my-app
+VM Size: Standard_B1s
+Disk: 30
+Environment: dev

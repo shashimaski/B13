@@ -1,0 +1,4 @@
+VM Name: app-server
+VM Size: Standard_B1s
+Disk: 30 GB
+OS Type: linux
