@@ -1,3 +1,0 @@
-Environment: dev
-Project: terraform-demo
-Owner: devops-team
