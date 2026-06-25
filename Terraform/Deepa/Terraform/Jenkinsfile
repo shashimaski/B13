@@ -3,13 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                git branch: 'terraform-jenkins-integration',
-                    url: 'git@github.com:adikarthik/B13.git'
-            }
-        }
-
         stage('Terraform Init') {
             steps {
                 dir('Terraform/Deepa/Terraform/Terraform-Jenkins') {
