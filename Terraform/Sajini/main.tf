@@ -25,7 +25,11 @@ resource "azurerm_network_security_group" "nsg" {
   resource_group_name = azurerm_resource_group.rg.name
 
   security_rule {
+<<<<<<< HEAD
     name                       = "SSH"
+=======
+    name                       = "AllowSSH"
+>>>>>>> 3bb082ce3555a6513ead74336bc8d6d8d399ade6
     priority                   = 100
     direction                  = "Inbound"
     access                     = "Allow"
@@ -35,6 +39,7 @@ resource "azurerm_network_security_group" "nsg" {
     source_address_prefix      = "*"
     destination_address_prefix = "*"
   }
+<<<<<<< HEAD
 
   security_rule {
     name                       = "HTTP"
@@ -51,6 +56,12 @@ resource "azurerm_network_security_group" "nsg" {
 
 resource "azurerm_public_ip" "pip" {
   name                = "${var.vm_name}-pip"
+=======
+}
+
+resource "azurerm_public_ip" "pip" {
+  name                = "vm-pip"
+>>>>>>> 3bb082ce3555a6513ead74336bc8d6d8d399ade6
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
 
@@ -58,7 +69,11 @@ resource "azurerm_public_ip" "pip" {
 }
 
 resource "azurerm_network_interface" "nic" {
+<<<<<<< HEAD
   name                = "${var.vm_name}-nic"
+=======
+  name                = "vm-nic"
+>>>>>>> 3bb082ce3555a6513ead74336bc8d6d8d399ade6
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
 
@@ -70,15 +85,24 @@ resource "azurerm_network_interface" "nic" {
   }
 }
 
+<<<<<<< HEAD
 resource "azurerm_network_interface_security_group_association" "nsg_association" {
+=======
+resource "azurerm_network_interface_security_group_association" "assoc" {
+>>>>>>> 3bb082ce3555a6513ead74336bc8d6d8d399ade6
   network_interface_id      = azurerm_network_interface.nic.id
   network_security_group_id = azurerm_network_security_group.nsg.id
 }
 
 resource "azurerm_linux_virtual_machine" "vm" {
   name                = var.vm_name
+<<<<<<< HEAD
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
+=======
+  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.rg.location
+>>>>>>> 3bb082ce3555a6513ead74336bc8d6d8d399ade6
 
   size           = "Standard_B2als_v2"
   admin_username = var.admin_username
